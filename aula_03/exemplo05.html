@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interações</title>
+    <script>
+        let nome = prompt("Qual é o seu nome?");
+        console.log(typeof(nome));//Tipo da variável
+        alert("Olá, " + nome + "!");
+
+        let n1 = parseInt(prompt("Valor de n1: "));
+        console.log(typeof(n1));
+        let n2 = parseInt(prompt("Valor de n2: "));
+        console.log(typeof(n2));
+
+        let soma = n1 + n2
+        console.log(typeof(soma));
+        if (isNaN(n1) || isNaN(n2)){
+            alert("Digite somente números")
+        } else {
+            alert("A soma é " + soma);
+        }
+        //NaN = Not a Number
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
