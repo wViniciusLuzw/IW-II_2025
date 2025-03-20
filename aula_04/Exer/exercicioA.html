@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExercicioA</title>
+    <script>
+        let n1 = parseFloat(prompt("Digite a primeira nota: "));
+        let n2 = parseFloat(prompt("Digite a segunda nota: "));
+        let n3 = parseFloat(prompt("Digite a terceira nota: "));
+        let result = ("");
+        let media = (n1 + n2 + n3)/3;
+        let arredondado = parseFloat(media.toFixed(2));
+
+        if (isNaN(n1) || isNaN(n2) || isNaN(n3)){
+            alert("Digite somente números");
+        } else {
+            if (media >= 7){
+                result = "Aprovado ✅";
+            } else if (5 >= media <= 6.9){
+                result = "Recuperação ⚠️";
+            } else {
+                result = "Reprovado ❌";
+            }
+            alert("A média do aluno é " + arredondado + ", resultado: " + result);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>criar um programa que receba a nota de um aluno e exiba a mensagem correspondente:</h3>
+    <p>Nota >= 7 → "Aprovado ✅"</p>
+    <p>Nota entre 5 e 6.9 → "Recuperação ⚠️"</p>
+    <p>Nota < 5 → "Reprovado ❌"</p>
+</body>
+</html>
