@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExercicioA</title>
+    <script>
+        function exibirMenu() {
+            return prompt(
+                "===== MENU INTERATIVO =====\n" +
+                "1 - Ver mensagem\n" +
+                "2 - Calcular soma\n" +
+                "3 - Sair\n" +
+                "Escolha uma opção:"
+            )
+        }
+        
+        function executarMenu(opcao) {
+            switch (opcao) {
+                case "1":
+                    alert("Olá! Bem-Vindo ao menu interativo");
+                    alert("Vamos calcular");
+                    break;
+                case "2":
+                    let n1 = parseFloat(prompt("Digite a primeira nota: "));
+                    let n2 = parseFloat(prompt("Digite a segunda nota: "));
+                    if (((n1 > 10) || (n1 < 0)) || ((n2 > 10) || (n2 < 0))) {
+                        alert('Digite apenas números entre 0 e 10');
+                        window.location.reload();
+                    } else {
+                        let result = ("");
+                        let media = (n1 + n2) / 2;
+                        let arredondado = parseFloat(media.toFixed(2));
+
+                        if (isNaN(n1) || isNaN(n2)) {
+                            alert("Digite somente números");
+                        } else {
+                            if (media >= 7) {
+                                result = "Aprovado ✅";
+                            } else if ((5 >= media) && (6.9 <= media)) {
+                                result = "Recuperação ⚠️";
+                            } else {
+                                result = "Reprovado ❌";
+                            }
+                            alert("A média do aluno é " + arredondado + ", resultado: " + result);
+                        }
+                    }
+                    break;
+                case "3":
+                    alert("Saindo do programa...")
+                    return false;   //Encerra o Loop
+                    break;
+                default:
+                    alert("Opção Inválida. Tente novamente")
+            }
+            return true;
+        }
+
+        function iniciarMenu() {
+            let continuar = true;
+            while (continuar) { //Caso "continuar" seja "True(verdadeiro)"
+                let opcao = exibirMenu(); //Utiliza a resposta do prompt da função "exibirMenu()", a utiliza dentro da variável "opcao"
+                continuar = executarMenu(opcao);
+            }
+        }
+
+        //Iniciar o Menu quando a página carregar
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
