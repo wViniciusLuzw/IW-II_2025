@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExercicioB</title>
+    <script>
+        function exibirMenu(){
+            return prompt(
+                "===== MENU INTERATIVO =====\n" +
+                "1 - Verificar idade\n" +
+                "2 - Sair\n" +
+                "Escolha uma opção:"
+            )
+        }
+
+        function executarMenu(opcao){
+            switch (opcao){
+                case "1":
+                    let idade = parseInt(prompt("Digite sua idade: "))
+                    if (!isNaN(idade) && (idade >= 0)){
+                        if (idade < 18){
+                            alert("Você é menor de idade");
+                        }else if(idade >= 18){
+                            alert("Você é maior de idade");
+                        }
+                    }else{
+                        alert("Digite apenas valores válidos");
+                        window.location.reload();
+                    }
+                break;
+
+                case "2":
+                    alert("Saindo do programa...");
+                    return false;
+                break;
+
+                default:
+                    alert("Digite apenas opções válidas");
+            }
+            return true;
+        }
+
+        function iniciarMenu(){
+            let continuar = true;
+            while(continuar){
+                let opcao = exibirMenu();
+                continuar = executarMenu(opcao);
+            }
+        }
+
+        iniciarMenu();
+    </script>
+</head>
+<body>
+    <h2>Verificação de idade</h2>
+    <h3>Escreva um programa que solicite que o usuário insira sua idade. 
+        O programa deve verificar se o usuário tem 18 anos de idade ou mais 
+        e exibir uma mensagem indicando se ele é um adulto ou um menor.</h3>
+</body>
+</html>

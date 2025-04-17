@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExercicioD</title>
+    <script>
+        function exibirMenu() {
+            return prompt(
+                "===== MENU INTERATIVO =====\n" +
+                "1 - Imprimir resultados\n" +
+                "2 - Sair\n" +
+                "Escolha uma opção:"
+            )
+        }
+
+        function executarMenu(opcao) {
+            switch (opcao) {
+                case "1":
+                    console.clear();
+                    let num = parseInt(prompt("Digite um número"));
+                    if (!isNaN(num) && (num >= 0)) {
+                        while (num >= 0) {
+                            console.log(num);
+                            num--;
+                        }
+                    } else {
+                        alert("Digite apenas números");
+                        window.location.reload();
+                    }
+                break;
+                
+                case "2":
+                    alert("Saindo do programa...");
+                    return false;
+                break;
+
+                default:
+                    alert("Digite uma opção válida");
+            }
+            return true
+        }
+
+        function iniciarMenu() {
+            let continuar = true;
+            while (continuar) {
+                let opcao = exibirMenu();
+                continuar = executarMenu(opcao);
+            }
+        }
+
+        iniciarMenu();
+
+    </script>
+</head>
+
+<body>
+    <h2>Contagem regressiva</h2>
+    <h3>Crie um programa que solicite ao usuário que insira um número.
+        Seu programa deve exibir uma contagem regressiva
+        desse número até 0 usando um loop WHILE.
+        Cada número deve ser impresso em uma nova linha.</h3>
+</body>
+
+</html>
