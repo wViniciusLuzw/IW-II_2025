@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expande</title>
+</head>
+<style>
+    #paragraph-container {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+    }
+
+    #paragraph-container.expanded {
+        max-height: 500px;
+    }
+</style>
+<body>
+    
+    <button id="toggle-button">Mostrar Mais</button>
+
+    <div id="paragraph-container">
+        <p id="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem iste qui repellat excepturi nesciunt saepe dolor adipisci, vel modi, impedit et veritatis possimus reiciendis explicabo doloribus corporis obcaecati ducimus culpa!</p>
+    </div>
+</body>
+<script>
+    const button = document.getElementById('toggle-button');
+    const container = document.getElementById('paragraph-container');
+
+    button.addEventListener('click', () => {
+        container.classList.toggle('expanded');
+
+        if (container.classList.contains('expanded')) {
+            button.textContent = "Mostrar menos";
+        } else {
+            button.textContent = "Mostrar mais"
+        }
+    });
+</script>
+</html>

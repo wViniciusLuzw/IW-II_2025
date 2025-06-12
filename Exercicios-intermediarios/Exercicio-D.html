@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta</title>
+</head>
+<body>
+    <label for="nome">Nome: </label>
+    <input type="text" id="nome" placeholder="Digite seu nome" required>
+</body>
+<script>
+    const nomeInput = document.getElementById('nome');
+
+    nomeInput.addEventListener('blur', () => {
+        if (nomeInput.value.trim() === '') {
+            alert("Este campo é obrigatório");
+        }
+    });
+</script>
+</html>

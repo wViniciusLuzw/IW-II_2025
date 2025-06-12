@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Lista Reordenável</h1>
+
+    <ul id="itemList">
+        <li>
+            Item 1
+            <span>
+                <button onclick="moveUp(this)">↑</button>
+                <button onclick="moveDown(this)">↓</button>
+            </span>
+        </li>
+
+        <li>
+            Item 2
+            <span>
+                <button onclick="moveUp(this)">↑</button>
+                <button onclick="moveDown(this)">↓</button>
+            </span>
+        </li>
+
+        <li>
+            Item 3
+            <span>
+                <button onclick="moveUp(this)">↑</button>
+                <button onclick="moveDown(this)">↓</button>
+            </span>
+        </li>
+
+        <li>
+            Item 4
+            <span>
+                <button onclick="moveUp(this)">↑</button>
+                <button onclick="moveDown(this)">↓</button>
+            </span>
+        </li>
+    </ul>
+</body>
+<script>
+    function moveUp(button) {
+        const li = button.closest('li');
+        const prev = li.previousElementSibling;
+        if (prev) {
+            li.parentNode.insertBefore(li, prev);
+        }
+    }
+
+    function moveDown(button) {
+        const li = button.closest('li');
+        const next = li.nextElementSibling;
+        if (next) {
+            li.parentNode.insertBefore(next, li);
+        }
+    }
+</script>
+</html>

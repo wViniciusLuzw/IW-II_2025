@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo de Texto</title>
+</head>
+<style>
+    input {
+        border: 3px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input.invalido {
+        border-color: red;
+    }
+</style>
+<body>
+    <label for="campo">Digite algo (mínimo 5 caracteres):</label><br>
+    <input type="text" id="campo" placeholder="Ex: exemplo">
+</body>
+<script>
+    const campo = document.getElementById('campo');
+
+    campo.addEventListener('input', () => {
+        if (campo.value.length < 5) {
+            campo.classList.add('invalido');
+        } else {
+            campo.classList.remove('invalido')
+        }
+    })
+</script>
+</html>

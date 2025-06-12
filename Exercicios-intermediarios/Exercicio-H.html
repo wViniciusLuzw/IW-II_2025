@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Quadrados</title>
+</head>
+<style>
+    .quadrado {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+    }
+</style>
+<body>
+    <button id="gerar">Gerar Quadrados</button>
+
+    <div id="container"></div>
+</body>
+<script>
+    const botao = document.getElementById('gerar');
+    const container = document.getElementById('container');
+
+    function corAleatoria() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    botao.addEventListener('click', () => {
+        container.innerHTML = '';
+
+        for (let i = 0; i < 5; i++){
+            const quadrado = document.createElement('div');
+            quadrado.classList.add('quadrado');
+            quadrado.style.backgroundColor = corAleatoria();
+            container.appendChild(quadrado);
+        }
+    });
+</script>
+</html>

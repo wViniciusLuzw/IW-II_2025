@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar</title>
+</head>
+<body>
+    <div id="conteudo">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quod pariatur cum voluptate magnam aspernatur consectetur voluptatem repudiandae maiores accusantium quia ea omnis sint similique eos, libero est, praesentium excepturi!
+    </div>
+
+    <button id="copiar">Copiar texto</button>
+</body>
+<script>
+    const bnt = document.getElementById('copiar');
+    const conteudo = document.getElementById("conteudo");
+
+    bnt.addEventListener('click', () => {
+        const texto = conteudo.textContent;
+
+        navigator.clipboard.writeText(texto)
+        .then(() => {
+            alert('texto copiado com sucesso');
+        })
+        .catch(err => {
+            console.error('Erro ao copiar', err);
+            alert('Erro ao copiar o texto');
+        });
+    });
+</script>
+</html>

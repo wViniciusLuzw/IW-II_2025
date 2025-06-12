@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Imagem</title>
+</head>
+<style>
+    #preview {
+        max-width: 100px;
+        max-height: 366px;
+    } 
+</style>
+<body>
+    <h1>Selecione uma Imagem:</h1>
+    <input type="file" id="upload" accept="image/*">
+
+    <div>
+        <img id="preview" src="" alt="Pré-visualização">
+    </div>
+</body>
+<script>
+    const uploadInput = document.getElementById('upload');
+    const previewImage = document.getElementById('preview');
+
+    uploadInput.addEventListener('change', function () {
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function () {
+                previewImage.src = reader.result;
+                previewImage.style.display = 'block';
+            });
+
+            reader.readAsDataURL(file);
+        } else {
+            previewImage.src = '';
+            previewImage.style.display = 'none';
+            alert('Por favor, selecione um arquivo de imagem válido')
+        }
+    });
+</script>
+</html>
