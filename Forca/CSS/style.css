@@ -21,22 +21,69 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 2%;
+    height: 98vh;
+
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 2vh;
+    padding: 10px;
+    width: 100%;
+}
+
+
 .menu {
-    background-color: blueviolet;
+    background-color: #e21a41;
     border-radius: 15px;
     width: fit-content;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .bnt-Start {
+    
     width: 100%;
-    padding: 2%;
-    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: 2%;
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: black;
+    color: white;
     border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+button:hover {
+ color: black;
+}
+
+button:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
 }
 
 .bnt-Start > h5 {
@@ -44,13 +91,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.bnt-Start:hover {
-    background-color: aquamarine;
-}
-
 .h1-Menu{
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: azure;
+    
     
 }
