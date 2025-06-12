@@ -6,15 +6,21 @@
     <title>Hora</title>
 </head>
 <body>
-    <button onclick="">Mostrar Hora Atual</button>
+    <button onclick="mostrarHora()">Mostrar Hora Atual</button>
     <p id="hora"></p>
 </body>
 
 <script>
     function mostrarHora() {
         const agora = new Date();
+
+        /*Formata Hora (hh:mm:ss)*/
+        const horas = agora.getHours();
+        const minutos = agora.getMinutes();
+        const segundos = agora.getSeconds();
+
         const hora = agora.toLocaleDateString('pt-br', { hour12: false});
-        document.getElementById('hora').textContent = "Hora Atual: " . hora;
+        document.getElementById('hora').textContent = `Hora Atual: ${horas}:${minutos}:${segundos}`;
     }
 </script>
 
