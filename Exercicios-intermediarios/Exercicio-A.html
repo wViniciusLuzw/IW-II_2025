@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora</title>
+</head>
+<body>
+    <button onclick="">Mostrar Hora Atual</button>
+    <p id="hora"></p>
+</body>
+
+<script>
+    function mostrarHora() {
+        const agora = new Date();
+        const hora = agora.toLocaleDateString('pt-br', { hour12: false});
+        document.getElementById('hora').textContent = "Hora Atual: " . hora;
+    }
+</script>
+
+</html>
