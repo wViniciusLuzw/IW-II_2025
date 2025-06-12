@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: url('../IMG/datingscout-VZDzvcRmLbo-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.sob-body {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+}*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2%;
+}
+
+.menu {
+    background-color: blueviolet;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 20px;
+}
+
+.bnt-Start {
+    width: 100%;
+    padding: 2%;
+    border-radius: 10px;
+    border: none;
+}
+
+.bnt-Start > h5 {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bnt-Start:hover {
+    background-color: aquamarine;
+}
+
+.h1-Menu{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: azure;
+    
+}
